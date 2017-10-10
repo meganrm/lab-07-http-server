@@ -1,0 +1,22 @@
+{
+  "name": "lab-07-http-server",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 07: Vanilla HTTP Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix lib/** test/** index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meganrm/lab-07-http-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meganrm/lab-07-http-server/issues"
+  },
+  "homepage": "https://github.com/meganrm/lab-07-http-server#readme"
+}

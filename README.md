@@ -1,5 +1,4 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) Lab 07: Vanilla HTTP Server
-======
 
 ## Submission Instructions
 * Work in a fork of this repository
@@ -29,7 +28,7 @@ For this assignment you will be building a HTTP server.
 #### Server Module
 The server module is responsible for creating an http server defining all route behavior and exporting an interface for starting and stoping the server. It should export an object with `start` and `stop` methods. The start and stop methods should each return a promise that resolves on success and rejects on error.
 ###### GET /
-When a client makes a GET request to / the server should send baack html with a project description and a anchor to /cowsay.
+When a client makes a GET request to / the server should send back html with a project description and a anchor to /cowsay.
 ``` html
 <!DOCTYPE html>
 <html>
@@ -52,7 +51,7 @@ When a client makes a GET request to / the server should send baack html with a 
 ```
 
 ###### GET /cowsay?text={message}
-When a client makes a GET request to /cowsay?text={message} the server should parse the querystring for a text key. It should then send a rendered HTML page with a cowsay cow speaking the value of the text query. If their is no text query the cow message should say `'I need something good to say!'`.
+When a client makes a GET request to /cowsay?text={message} the server should parse the query string for a text key. It should then send a rendered HTML page with a cowsay cow speaking the value of the text query. If there is no text query the cow message should say `'I need something good to say!'`.
 ``` html
 <!DOCTYPE html>
 <html>
