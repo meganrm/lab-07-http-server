@@ -19,9 +19,9 @@ const server = http.createServer((req, res) => {
     let statusCode = 200;
     sendResponse(res, statusCode, bodyParser.mainPage(), 'html');
   }
-  else if (req.method === 'GET' && req.url.pathname === '/query') {
+  else if (req.method === 'GET' && req.url.pathname === '/cowsay') {
     //handeling query params
-    sendResponse(res, 200, req.url.query);
+    sendResponse(res, 200, bodyParser.makePage('cow', req.url.query), 'html');
   }
   //parse data
   else if (req.method === 'POST' && req.url === '/') {
