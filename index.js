@@ -4,29 +4,31 @@ const http = require('http');
 const url = require('url');
 const urlParser = require('./lib/urlParser');
 
+const server = http.createServer((req, res) => {
+  req.url = url.parse(req.url);
 
+  if (req.method === 'GET') {
 
-function start(){
-  const server = http.createServer((req, res) => {
-    req.url = url.parse(req.url);
+    urlParser.getRouter(req, res);
 
-    if (req.method === 'GET') {
+  } else if (req.method === 'POST') {
 
-      urlParser.getRouter(req, res);
+    if (req.url.pathname.startsWith('/api')) {
 
-    } else if (req.method === 'POST') {
-
-      if (req.url.pathname.startsWith('/api')) {
-        urlParser.postRouter(req, res);
-      } else {
-        urlParser.sendResponse(res, 400, 'bad request');
-      }
-
+      urlParser.postRouter(req, res);
+      
     } else {
 
       urlParser.sendResponse(res, 400, 'bad request');
 
     }
-  });
-  server.listen(3000);
-}
+
+  } else {
+
+    urlParser.sendResponse(res, 400, 'bad request');
+
+  }
+});
+
+
+server.listen(3000);
