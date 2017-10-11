@@ -1,6 +1,5 @@
 'use strict';
 
-const cowsay = require('cowsay');
 const http = require('http');
 const url = require('url');
 const urlParser = require('./lib/urlParser');
@@ -29,6 +28,7 @@ const server = http.createServer((req, res) => {
     urlParser.sendResponse(res, 400, 'bad request');
 
   }
+
 });
 
 
